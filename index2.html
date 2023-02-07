@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style class="vjs-styles-defaults">
+        .video-js {
+            width: 300px;
+            height: 150px;
+        }
+
+        .vjs-fluid:not(.vjs-audio-only-mode) {
+            padding-top: 56.25%
+        }
+    </style>
+    <style class="vjs-styles-dimensions">
+        .video_1-dimensions {
+            width: 640px;
+            height: 360px;
+        }
+
+        .video_1-dimensions.vjs-fluid {
+            padding-top: 56.25%;
+        }
+    </style>
+    <title>HoiHulloorLive</title>
+
+    <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- unpkg : use a specific version of Video.js (change the version numbers as necessary) -->
+    <link href="https://unpkg.com/video.js@7.10.2/dist/video-js.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/video.js@7.10.2/dist/video.min.js"></script>
+    <script src="https://vjs.zencdn.net/7.5.5/video.js"></script>
+    <!-- cdnjs : use a specific version of Video.js (change the version numbers as necessary) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video-js.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.10.2/video.min.js"></script>
+    <script src="https://www.vienaonline.com/js/nuevo/nuevo.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Rambla:400i');
+
+        body {
+            font-family: "myriad pro", tahoma, verdana, arial, sans-serif;
+            font-size: 12px;
+            margin: 0;
+            padding: 0;
+            background: #000 url(/live/img/bgu.jpg) top center;
+            color: #00abff;
+        }
+
+        .tv-area {
+            margin-top: 50px;
+        }
+
+        .channel-list {
+            margin-top: 20px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .thumbnail-slider {
+            margin: 0;
+            padding: 0;
+        }
+
+        .thumbnail-slider ul,
+        .thumbnail-slider ul li {
+            display: block;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .thumbnail-slider li {
+            width: 23%;
+            height: 75px;
+            margin: 5px 1%;
+            list-style: none;
+        }
+
+        .thumbnail-slider li img {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 5px;
+        }
+
+
+        .channel-list::-webkit-scrollbar {
+            width: 12px;
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        .channel-list::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #D62929;
+        }
+
+        /*[data-player] { position: relative; width: 100%; height: auto; margin: 0; }
+[data-player] .container[data-container] { width: 100%; height: auto; position: relative; }
+[data-player] .media-control[data-media-control] { top: 0; right: 0; bottom: 0; left: 0; }
+[data-player] video { position: relative; display: block; width: 100%; height: auto; }*/
+        /*
+@media (max-width: 1199px) {
+  .channel-list { height: 425px; }
+}
+@media (max-width: 990px) {
+  .channel-list { padding: 10px 15px; height: auto !important; overflow-y: hidden; overflow-x: auto; }
+  .thumbnail-slider li { display: inline-block; margin: 0 5px 0 0; }
+  .thumbnail-slider li a { display: block; width: 80px; }
+}
+@media (max-width: 410px) {
+  .thumbnail-slider li a { width: 50px; }
+}*/
+    </style>
+
+</head>
+
+<body>
+    <!--<video id="video_1" class="video-js vjs-fluid" controls preload="auto" width="640" height="360" poster="//www.domain.com/poster.jpg"></video>-->
+    <div class="container-fluid">
+        <div class="row justify-content-center" style="margin-top: 50px;">
+
+            <div class="col-12 col-lg-8">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <div id="player" class="embed-responsive-item">
+                        <div text-align="center">
+                            <div data-setup="{ &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;, &quot;youtube&quot;], &quot;sources&quot;: [{ &quot;type&quot;: &quot;application/x-mpegURL&quot;, &quot;src&quot;: &quot;http://live.hoihulloor.com/live/hull1000/index.m3u8&quot;}]}"
+                                preload="none" autoplay="true" poster="http://i.imgur.com/xxqm7EE.png"
+                                class="video-js vjs-default-skin vjs-fluid video_1-dimensions vjs-controls-enabled vjs-workinghover vjs-v7 vjs-live vjs-playing vjs-has-started vjs-user-inactive"
+                                id="video_1" tabindex="-1" role="region" lang="en-us" aria-label="Video Player"><video
+                                    id="video_1_html5_api" class="vjs-tech" poster="//i.imgur.com/aE0LoTe.png"
+                                    autoplay="" preload="none"
+                                    data-setup="{ &quot;techOrder&quot;: [&quot;html5&quot;, &quot;flash&quot;, &quot;youtube&quot;], &quot;sources&quot;: [{ &quot;type&quot;: &quot;application/x-mpegURL&quot;, &quot;src&quot;: &quot;http://live.hoihulloor.com/live/hull1000/index.m3u8&quot;}]}"
+                                    tabindex="-1" role="application"
+                                    src="blob:http://live.hoihulloor.com/1a5e53a9-2ad8-487b-8c4d-7d3215ef8d6c"></video>
+                                <div class="vjs-poster" aria-disabled="false"
+                                    style="background-image: url(&quot;//i.imgur.com/aE0LoTe.png&quot;);"></div>
+                                <div class="vjs-text-track-display" aria-live="off" aria-atomic="true">
+                                    <div style="position: absolute; inset: 0px; margin: 1.5%;"></div>
+                                </div>
+                                <div class="vjs-loading-spinner" dir="ltr"><span class="vjs-control-text">Video Player
+                                        is loading.</span></div><button class="vjs-big-play-button" type="button"
+                                    title="Play Video" aria-disabled="false"><span aria-hidden="true"
+                                        class="vjs-icon-placeholder"></span><span class="vjs-control-text"
+                                        aria-live="polite">Play Video</span></button>
+                                <div class="vjs-control-bar" dir="ltr"><button
+                                        class="vjs-play-control vjs-control vjs-button vjs-playing" type="button"
+                                        title="Pause" aria-disabled="false"><span aria-hidden="true"
+                                            class="vjs-icon-placeholder"></span><span class="vjs-control-text"
+                                            aria-live="polite">Pause</span></button>
+                                    <div class="vjs-volume-panel vjs-control vjs-volume-panel-horizontal"><button
+                                            class="vjs-mute-control vjs-control vjs-button vjs-vol-1" type="button"
+                                            title="Mute" aria-disabled="false"><span aria-hidden="true"
+                                                class="vjs-icon-placeholder"></span><span class="vjs-control-text"
+                                                aria-live="polite">Mute</span></button>
+                                        <div class="vjs-volume-control vjs-control vjs-volume-horizontal">
+                                            <div tabindex="0"
+                                                class="vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal"
+                                                role="slider" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100"
+                                                aria-label="Volume Level" aria-live="polite" aria-valuetext="5%">
+                                                <div class="vjs-volume-level" style="width: 4.88%;"><span
+                                                        class="vjs-control-text"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vjs-current-time vjs-time-control vjs-control"><span
+                                            class="vjs-control-text" role="presentation">Current Time&nbsp;</span><span
+                                            class="vjs-current-time-display" aria-live="off"
+                                            role="presentation">5:56</span></div>
+                                    <div class="vjs-time-control vjs-time-divider" aria-hidden="true">
+                                        <div><span>/</span></div>
+                                    </div>
+                                    <div class="vjs-duration vjs-time-control vjs-control"><span
+                                            class="vjs-control-text" role="presentation">Duration&nbsp;</span><span
+                                            class="vjs-duration-display" aria-live="off"
+                                            role="presentation">-:-:-</span></div>
+                                    <div class="vjs-progress-control vjs-control">
+                                        <div tabindex="0" class="vjs-progress-holder vjs-slider vjs-slider-horizontal"
+                                            role="slider" aria-valuenow="0.00" aria-valuemin="0" aria-valuemax="100"
+                                            aria-label="Progress Bar" aria-valuetext="0:05:56 of -:-:-">
+                                            <div class="vjs-load-progress" style="width: 0%;"><span
+                                                    class="vjs-control-text"><span>Loaded</span>: <span
+                                                        class="vjs-control-text-loaded-percentage">0.00%</span></span>
+                                                <div data-start="355.198" data-end="361.062649"
+                                                    style="left: 98.38%; width: 1.62%;"></div>
+                                            </div>
+                                            <div class="vjs-mouse-display">
+                                                <div class="vjs-time-tooltip" aria-hidden="true"></div>
+                                            </div>
+                                            <div class="vjs-play-progress vjs-slider-bar" aria-hidden="true"
+                                                style="width: 0%;">
+                                                <div class="vjs-time-tooltip" aria-hidden="true" style="right: 0px;">
+                                                    0:05:56</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="vjs-live-control vjs-control">
+                                        <div class="vjs-live-display" aria-live="off"><span
+                                                class="vjs-control-text">Stream Type&nbsp;</span>LIVE</div>
+                                    </div><button class="vjs-seek-to-live-control vjs-control" type="button"
+                                        title="Seek to live, currently behind live" aria-disabled="false"><span
+                                            aria-hidden="true" class="vjs-icon-placeholder"></span><span
+                                            class="vjs-control-text" aria-live="polite">Seek to live, currently behind
+                                            live</span><span class="vjs-seek-to-live-text"
+                                            aria-hidden="true">LIVE</span></button>
+                                    <div class="vjs-remaining-time vjs-time-control vjs-control"><span
+                                            class="vjs-control-text" role="presentation">Remaining
+                                            Time&nbsp;</span><span aria-hidden="true">-</span><span
+                                            class="vjs-remaining-time-display" aria-live="off"
+                                            role="presentation">-:-:-</span></div>
+                                    <div class="vjs-custom-control-spacer vjs-spacer ">&nbsp;</div>
+                                    <div
+                                        class="vjs-playback-rate vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden">
+                                        <div class="vjs-playback-rate-value">1x</div><button
+                                            class="vjs-playback-rate vjs-menu-button vjs-menu-button-popup vjs-button"
+                                            type="button" aria-disabled="false" title="Playback Rate"
+                                            aria-haspopup="true" aria-expanded="false"><span aria-hidden="true"
+                                                class="vjs-icon-placeholder"></span><span class="vjs-control-text"
+                                                aria-live="polite">Playback Rate</span></button>
+                                        <div class="vjs-menu">
+                                            <ul class="vjs-menu-content" role="menu"></ul>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="vjs-chapters-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden">
+                                        <button
+                                            class="vjs-chapters-button vjs-menu-button vjs-menu-button-popup vjs-button"
+                                            type="button" aria-disabled="false" title="Chapters" aria-haspopup="true"
+                                            aria-expanded="false"><span aria-hidden="true"
+                                                class="vjs-icon-placeholder"></span><span class="vjs-control-text"
+                                                aria-live="polite">Chapters</span></button>
+                                        <div class="vjs-menu">
+                                            <ul class="vjs-menu-content" role="menu">
+                                                <li class="vjs-menu-title">Chapters</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="vjs-descriptions-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden">
+                                        <button
+                                            class="vjs-descriptions-button vjs-menu-button vjs-menu-button-popup vjs-button"
+                                            type="button" aria-disabled="false" title="Descriptions"
+                                            aria-haspopup="true" aria-expanded="false"><span aria-hidden="true"
+                                                class="vjs-icon-placeholder"></span><span class="vjs-control-text"
+                                                aria-live="polite">Descriptions</span></button>
+                                        <div class="vjs-menu">
+                                            <ul class="vjs-menu-content" role="menu">
+                                                <li class="vjs-menu-item vjs-selected" role="menuitemradio"
+                                                    aria-disabled="false" tabindex="-1" aria-checked="true"><span
+                                                        class="vjs-menu-item-text">descriptions off</span><span
+                                                        class="vjs-control-text" aria-live="polite">, selected</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="vjs-subs-caps-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden">
+                                        <button
+                                            class="vjs-subs-caps-button vjs-menu-button vjs-menu-button-popup vjs-button"
+                                            type="button" aria-disabled="false" title="Captions" aria-haspopup="true"
+                                            aria-expanded="false"><span aria-hidden="true"
+                                                class="vjs-icon-placeholder"></span><span class="vjs-control-text"
+                                                aria-live="polite">Captions</span></button>
+                                        <div class="vjs-menu">
+                                            <ul class="vjs-menu-content" role="menu">
+                                                <li class="vjs-menu-item vjs-texttrack-settings" role="menuitem"
+                                                    aria-disabled="false" tabindex="-1"><span
+                                                        class="vjs-menu-item-text">captions settings</span><span
+                                                        class="vjs-control-text" aria-live="polite">, opens captions
+                                                        settings dialog</span></li>
+                                                <li class="vjs-menu-item vjs-selected" role="menuitemradio"
+                                                    aria-disabled="false" tabindex="-1" aria-checked="true"><span
+                                                        class="vjs-menu-item-text">captions off</span><span
+                                                        class="vjs-control-text" aria-live="polite">, selected</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="vjs-audio-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden">
+                                        <button
+                                            class="vjs-audio-button vjs-menu-button vjs-menu-button-popup vjs-button"
+                                            type="button" aria-disabled="false" title="Audio Track" aria-haspopup="true"
+                                            aria-expanded="false"><span aria-hidden="true"
+                                                class="vjs-icon-placeholder"></span><span class="vjs-control-text"
+                                                aria-live="polite">Audio Track</span></button>
+                                        <div class="vjs-menu">
+                                            <ul class="vjs-menu-content" role="menu">
+                                                <li class="vjs-menu-item vjs-selected vjs-main-menu-item"
+                                                    role="menuitemradio" aria-disabled="false" tabindex="-1"
+                                                    aria-checked="true"><span
+                                                        class="vjs-menu-item-text">default</span><span
+                                                        class="vjs-control-text" aria-live="polite">, selected</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div><button class="vjs-picture-in-picture-control vjs-control vjs-button"
+                                        type="button" title="Picture-in-Picture" aria-disabled="false"><span
+                                            aria-hidden="true" class="vjs-icon-placeholder"></span><span
+                                            class="vjs-control-text"
+                                            aria-live="polite">Picture-in-Picture</span></button><button
+                                        class="vjs-fullscreen-control vjs-control vjs-button" type="button"
+                                        title="Fullscreen" aria-disabled="false"><span aria-hidden="true"
+                                            class="vjs-icon-placeholder"></span><span class="vjs-control-text"
+                                            aria-live="polite">Fullscreen</span></button>
+                                </div>
+                                <div class="vjs-error-display vjs-modal-dialog vjs-hidden "
+                                    aria-describedby="video_1_component_368_description" aria-hidden="true"
+                                    aria-label="Modal Window" role="dialog">
+                                    <p class="vjs-modal-dialog-description vjs-control-text"
+                                        id="video_1_component_368_description">This is a modal window.</p>
+                                    <div class="vjs-modal-dialog-content" role="document"></div>
+                                </div>
+                                <div class="vjs-modal-dialog vjs-hidden  vjs-text-track-settings"
+                                    aria-describedby="video_1_component_373_description" aria-hidden="true"
+                                    aria-label="Caption Settings Dialog" role="dialog">
+                                    <p class="vjs-modal-dialog-description vjs-control-text"
+                                        id="video_1_component_373_description">Beginning of dialog window. Escape will
+                                        cancel and close the window.</p>
+                                    <div class="vjs-modal-dialog-content" role="document">
+                                        <div class="vjs-track-settings-colors">
+                                            <fieldset class="vjs-fg-color vjs-track-setting">
+                                                <legend id="captions-text-legend-video_1_component_373">Text</legend>
+                                                <label id="captions-foreground-color-video_1_component_373"
+                                                    class="vjs-label">Color</label><select
+                                                    aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-color-video_1_component_373">
+                                                    <option id="captions-foreground-color-video_1_component_373-White"
+                                                        value="#FFF"
+                                                        aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-color-video_1_component_373 captions-foreground-color-video_1_component_373-White">
+                                                        White</option>
+                                                    <option id="captions-foreground-color-video_1_component_373-Black"
+                                                        value="#000"
+                                                        aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-color-video_1_component_373 captions-foreground-color-video_1_component_373-Black">
+                                                        Black</option>
+                                                    <option id="captions-foreground-color-video_1_component_373-Red"
+                                                        value="#F00"
+                                                        aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-color-video_1_component_373 captions-foreground-color-video_1_component_373-Red">
+                                                        Red</option>
+                                                    <option id="captions-foreground-color-video_1_component_373-Green"
+                                                        value="#0F0"
+                                                        aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-color-video_1_component_373 captions-foreground-color-video_1_component_373-Green">
+                                                        Green</option>
+                                                    <option id="captions-foreground-color-video_1_component_373-Blue"
+                                                        value="#00F"
+                                                        aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-color-video_1_component_373 captions-foreground-color-video_1_component_373-Blue">
+                                                        Blue</option>
+                                                    <option id="captions-foreground-color-video_1_component_373-Yellow"
+                                                        value="#FF0"
+                                                        aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-color-video_1_component_373 captions-foreground-color-video_1_component_373-Yellow">
+                                                        Yellow</option>
+                                                    <option id="captions-foreground-color-video_1_component_373-Magenta"
+                                                        value="#F0F"
+                                                        aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-color-video_1_component_373 captions-foreground-color-video_1_component_373-Magenta">
+                                                        Magenta</option>
+                                                    <option id="captions-foreground-color-video_1_component_373-Cyan"
+                                                        value="#0FF"
+                                                        aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-color-video_1_component_373 captions-foreground-color-video_1_component_373-Cyan">
+                                                        Cyan</option>
+                                                </select><span class="vjs-text-opacity vjs-opacity"><label
+                                                        id="captions-foreground-opacity-video_1_component_373"
+                                                        class="vjs-label">Transparency</label><select
+                                                        aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-opacity-video_1_component_373">
+                                                        <option
+                                                            id="captions-foreground-opacity-video_1_component_373-Opaque"
+                                                            value="1"
+                                                            aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-opacity-video_1_component_373 captions-foreground-opacity-video_1_component_373-Opaque">
+                                                            Opaque</option>
+                                                        <option
+                                                            id="captions-foreground-opacity-video_1_component_373-SemiTransparent"
+                                                            value="0.5"
+                                                            aria-labelledby="captions-text-legend-video_1_component_373 captions-foreground-opacity-video_1_component_373 captions-foreground-opacity-video_1_component_373-SemiTransparent">
+                                                            Semi-Transparent</option>
+                                                    </select></span>
+                                            </fieldset>
+                                            <fieldset class="vjs-bg-color vjs-track-setting">
+                                                <legend id="captions-background-video_1_component_373">Background
+                                                </legend><label id="captions-background-color-video_1_component_373"
+                                                    class="vjs-label">Color</label><select
+                                                    aria-labelledby="captions-background-video_1_component_373 captions-background-color-video_1_component_373">
+                                                    <option id="captions-background-color-video_1_component_373-Black"
+                                                        value="#000"
+                                                        aria-labelledby="captions-background-video_1_component_373 captions-background-color-video_1_component_373 captions-background-color-video_1_component_373-Black">
+                                                        Black</option>
+                                                    <option id="captions-background-color-video_1_component_373-White"
+                                                        value="#FFF"
+                                                        aria-labelledby="captions-background-video_1_component_373 captions-background-color-video_1_component_373 captions-background-color-video_1_component_373-White">
+                                                        White</option>
+                                                    <option id="captions-background-color-video_1_component_373-Red"
+                                                        value="#F00"
+                                                        aria-labelledby="captions-background-video_1_component_373 captions-background-color-video_1_component_373 captions-background-color-video_1_component_373-Red">
+                                                        Red</option>
+                                                    <option id="captions-background-color-video_1_component_373-Green"
+                                                        value="#0F0"
+                                                        aria-labelledby="captions-background-video_1_component_373 captions-background-color-video_1_component_373 captions-background-color-video_1_component_373-Green">
+                                                        Green</option>
+                                                    <option id="captions-background-color-video_1_component_373-Blue"
+                                                        value="#00F"
+                                                        aria-labelledby="captions-background-video_1_component_373 captions-background-color-video_1_component_373 captions-background-color-video_1_component_373-Blue">
+                                                        Blue</option>
+                                                    <option id="captions-background-color-video_1_component_373-Yellow"
+                                                        value="#FF0"
+                                                        aria-labelledby="captions-background-video_1_component_373 captions-background-color-video_1_component_373 captions-background-color-video_1_component_373-Yellow">
+                                                        Yellow</option>
+                                                    <option id="captions-background-color-video_1_component_373-Magenta"
+                                                        value="#F0F"
+                                                        aria-labelledby="captions-background-video_1_component_373 captions-background-color-video_1_component_373 captions-background-color-video_1_component_373-Magenta">
+                                                        Magenta</option>
+                                                    <option id="captions-background-color-video_1_component_373-Cyan"
+                                                        value="#0FF"
+                                                        aria-labelledby="captions-background-video_1_component_373 captions-background-color-video_1_component_373 captions-background-color-video_1_component_373-Cyan">
+                                                        Cyan</option>
+                                                </select><span class="vjs-bg-opacity vjs-opacity"><label
+                                                        id="captions-background-opacity-video_1_component_373"
+                                                        class="vjs-label">Transparency</label><select
+                                                        aria-labelledby="captions-background-video_1_component_373 captions-background-opacity-video_1_component_373">
+                                                        <option
+                                                            id="captions-background-opacity-video_1_component_373-Opaque"
+                                                            value="1"
+                                                            aria-labelledby="captions-background-video_1_component_373 captions-background-opacity-video_1_component_373 captions-background-opacity-video_1_component_373-Opaque">
+                                                            Opaque</option>
+                                                        <option
+                                                            id="captions-background-opacity-video_1_component_373-SemiTransparent"
+                                                            value="0.5"
+                                                            aria-labelledby="captions-background-video_1_component_373 captions-background-opacity-video_1_component_373 captions-background-opacity-video_1_component_373-SemiTransparent">
+                                                            Semi-Transparent</option>
+                                                        <option
+                                                            id="captions-background-opacity-video_1_component_373-Transparent"
+                                                            value="0"
+                                                            aria-labelledby="captions-background-video_1_component_373 captions-background-opacity-video_1_component_373 captions-background-opacity-video_1_component_373-Transparent">
+                                                            Transparent</option>
+                                                    </select></span>
+                                            </fieldset>
+                                            <fieldset class="vjs-window-color vjs-track-setting">
+                                                <legend id="captions-window-video_1_component_373">Window</legend><label
+                                                    id="captions-window-color-video_1_component_373"
+                                                    class="vjs-label">Color</label><select
+                                                    aria-labelledby="captions-window-video_1_component_373 captions-window-color-video_1_component_373">
+                                                    <option id="captions-window-color-video_1_component_373-Black"
+                                                        value="#000"
+                                                        aria-labelledby="captions-window-video_1_component_373 captions-window-color-video_1_component_373 captions-window-color-video_1_component_373-Black">
+                                                        Black</option>
+                                                    <option id="captions-window-color-video_1_component_373-White"
+                                                        value="#FFF"
+                                                        aria-labelledby="captions-window-video_1_component_373 captions-window-color-video_1_component_373 captions-window-color-video_1_component_373-White">
+                                                        White</option>
+                                                    <option id="captions-window-color-video_1_component_373-Red"
+                                                        value="#F00"
+                                                        aria-labelledby="captions-window-video_1_component_373 captions-window-color-video_1_component_373 captions-window-color-video_1_component_373-Red">
+                                                        Red</option>
+                                                    <option id="captions-window-color-video_1_component_373-Green"
+                                                        value="#0F0"
+                                                        aria-labelledby="captions-window-video_1_component_373 captions-window-color-video_1_component_373 captions-window-color-video_1_component_373-Green">
+                                                        Green</option>
+                                                    <option id="captions-window-color-video_1_component_373-Blue"
+                                                        value="#00F"
+                                                        aria-labelledby="captions-window-video_1_component_373 captions-window-color-video_1_component_373 captions-window-color-video_1_component_373-Blue">
+                                                        Blue</option>
+                                                    <option id="captions-window-color-video_1_component_373-Yellow"
+                                                        value="#FF0"
+                                                        aria-labelledby="captions-window-video_1_component_373 captions-window-color-video_1_component_373 captions-window-color-video_1_component_373-Yellow">
+                                                        Yellow</option>
+                                                    <option id="captions-window-color-video_1_component_373-Magenta"
+                                                        value="#F0F"
+                                                        aria-labelledby="captions-window-video_1_component_373 captions-window-color-video_1_component_373 captions-window-color-video_1_component_373-Magenta">
+                                                        Magenta</option>
+                                                    <option id="captions-window-color-video_1_component_373-Cyan"
+                                                        value="#0FF"
+                                                        aria-labelledby="captions-window-video_1_component_373 captions-window-color-video_1_component_373 captions-window-color-video_1_component_373-Cyan">
+                                                        Cyan</option>
+                                                </select><span class="vjs-window-opacity vjs-opacity"><label
+                                                        id="captions-window-opacity-video_1_component_373"
+                                                        class="vjs-label">Transparency</label><select
+                                                        aria-labelledby="captions-window-video_1_component_373 captions-window-opacity-video_1_component_373">
+                                                        <option
+                                                            id="captions-window-opacity-video_1_component_373-Transparent"
+                                                            value="0"
+                                                            aria-labelledby="captions-window-video_1_component_373 captions-window-opacity-video_1_component_373 captions-window-opacity-video_1_component_373-Transparent">
+                                                            Transparent</option>
+                                                        <option
+                                                            id="captions-window-opacity-video_1_component_373-SemiTransparent"
+                                                            value="0.5"
+                                                            aria-labelledby="captions-window-video_1_component_373 captions-window-opacity-video_1_component_373 captions-window-opacity-video_1_component_373-SemiTransparent">
+                                                            Semi-Transparent</option>
+                                                        <option
+                                                            id="captions-window-opacity-video_1_component_373-Opaque"
+                                                            value="1"
+                                                            aria-labelledby="captions-window-video_1_component_373 captions-window-opacity-video_1_component_373 captions-window-opacity-video_1_component_373-Opaque">
+                                                            Opaque</option>
+                                                    </select></span>
+                                            </fieldset>
+                                        </div>
+                                        <div class="vjs-track-settings-font">
+                                            <fieldset class="vjs-font-percent vjs-track-setting">
+                                                <legend id="captions-font-size-video_1_component_373" class="">Font Size
+                                                </legend><select
+                                                    aria-labelledby="captions-font-size-video_1_component_373">
+                                                    <option id="captions-font-size-video_1_component_373-50"
+                                                        value="0.50"
+                                                        aria-labelledby="captions-font-size-video_1_component_373 captions-font-size-video_1_component_373-50">
+                                                        50%</option>
+                                                    <option id="captions-font-size-video_1_component_373-75"
+                                                        value="0.75"
+                                                        aria-labelledby="captions-font-size-video_1_component_373 captions-font-size-video_1_component_373-75">
+                                                        75%</option>
+                                                    <option id="captions-font-size-video_1_component_373-100"
+                                                        value="1.00"
+                                                        aria-labelledby="captions-font-size-video_1_component_373 captions-font-size-video_1_component_373-100">
+                                                        100%</option>
+                                                    <option id="captions-font-size-video_1_component_373-125"
+                                                        value="1.25"
+                                                        aria-labelledby="captions-font-size-video_1_component_373 captions-font-size-video_1_component_373-125">
+                                                        125%</option>
+                                                    <option id="captions-font-size-video_1_component_373-150"
+                                                        value="1.50"
+                                                        aria-labelledby="captions-font-size-video_1_component_373 captions-font-size-video_1_component_373-150">
+                                                        150%</option>
+                                                    <option id="captions-font-size-video_1_component_373-175"
+                                                        value="1.75"
+                                                        aria-labelledby="captions-font-size-video_1_component_373 captions-font-size-video_1_component_373-175">
+                                                        175%</option>
+                                                    <option id="captions-font-size-video_1_component_373-200"
+                                                        value="2.00"
+                                                        aria-labelledby="captions-font-size-video_1_component_373 captions-font-size-video_1_component_373-200">
+                                                        200%</option>
+                                                    <option id="captions-font-size-video_1_component_373-300"
+                                                        value="3.00"
+                                                        aria-labelledby="captions-font-size-video_1_component_373 captions-font-size-video_1_component_373-300">
+                                                        300%</option>
+                                                    <option id="captions-font-size-video_1_component_373-400"
+                                                        value="4.00"
+                                                        aria-labelledby="captions-font-size-video_1_component_373 captions-font-size-video_1_component_373-400">
+                                                        400%</option>
+                                                </select>
+                                            </fieldset>
+                                            <fieldset class="vjs-edge-style vjs-track-setting">
+                                                <legend id="video_1_component_373" class="">Text Edge Style</legend>
+                                                <select aria-labelledby="video_1_component_373">
+                                                    <option id="video_1_component_373-None" value="none"
+                                                        aria-labelledby="video_1_component_373 video_1_component_373-None">
+                                                        None</option>
+                                                    <option id="video_1_component_373-Raised" value="raised"
+                                                        aria-labelledby="video_1_component_373 video_1_component_373-Raised">
+                                                        Raised</option>
+                                                    <option id="video_1_component_373-Depressed" value="depressed"
+                                                        aria-labelledby="video_1_component_373 video_1_component_373-Depressed">
+                                                        Depressed</option>
+                                                    <option id="video_1_component_373-Uniform" value="uniform"
+                                                        aria-labelledby="video_1_component_373 video_1_component_373-Uniform">
+                                                        Uniform</option>
+                                                    <option id="video_1_component_373-Dropshadow" value="dropshadow"
+                                                        aria-labelledby="video_1_component_373 video_1_component_373-Dropshadow">
+                                                        Dropshadow</option>
+                                                </select>
+                                            </fieldset>
+                                            <fieldset class="vjs-font-family vjs-track-setting">
+                                                <legend id="captions-font-family-video_1_component_373" class="">Font
+                                                    Family</legend><select
+                                                    aria-labelledby="captions-font-family-video_1_component_373">
+                                                    <option
+                                                        id="captions-font-family-video_1_component_373-ProportionalSansSerif"
+                                                        value="proportionalSansSerif"
+                                                        aria-labelledby="captions-font-family-video_1_component_373 captions-font-family-video_1_component_373-ProportionalSansSerif">
+                                                        Proportional Sans-Serif</option>
+                                                    <option
+                                                        id="captions-font-family-video_1_component_373-MonospaceSansSerif"
+                                                        value="monospaceSansSerif"
+                                                        aria-labelledby="captions-font-family-video_1_component_373 captions-font-family-video_1_component_373-MonospaceSansSerif">
+                                                        Monospace Sans-Serif</option>
+                                                    <option
+                                                        id="captions-font-family-video_1_component_373-ProportionalSerif"
+                                                        value="proportionalSerif"
+                                                        aria-labelledby="captions-font-family-video_1_component_373 captions-font-family-video_1_component_373-ProportionalSerif">
+                                                        Proportional Serif</option>
+                                                    <option
+                                                        id="captions-font-family-video_1_component_373-MonospaceSerif"
+                                                        value="monospaceSerif"
+                                                        aria-labelledby="captions-font-family-video_1_component_373 captions-font-family-video_1_component_373-MonospaceSerif">
+                                                        Monospace Serif</option>
+                                                    <option id="captions-font-family-video_1_component_373-Casual"
+                                                        value="casual"
+                                                        aria-labelledby="captions-font-family-video_1_component_373 captions-font-family-video_1_component_373-Casual">
+                                                        Casual</option>
+                                                    <option id="captions-font-family-video_1_component_373-Script"
+                                                        value="script"
+                                                        aria-labelledby="captions-font-family-video_1_component_373 captions-font-family-video_1_component_373-Script">
+                                                        Script</option>
+                                                    <option id="captions-font-family-video_1_component_373-SmallCaps"
+                                                        value="small-caps"
+                                                        aria-labelledby="captions-font-family-video_1_component_373 captions-font-family-video_1_component_373-SmallCaps">
+                                                        Small Caps</option>
+                                                </select>
+                                            </fieldset>
+                                        </div>
+                                        <div class="vjs-track-settings-controls"><button type="button"
+                                                class="vjs-default-button"
+                                                title="restore all settings to the default values">Reset<span
+                                                    class="vjs-control-text"> restore all settings to the default
+                                                    values</span></button><button type="button"
+                                                class="vjs-done-button">Done</button></div>
+                                    </div><button class="vjs-close-button vjs-control vjs-button" type="button"
+                                        aria-disabled="false" title="Close Modal Dialog"><span aria-hidden="true"
+                                            class="vjs-icon-placeholder"></span><span class="vjs-control-text"
+                                            aria-live="polite">Close Modal Dialog</span></button>
+                                    <p class="vjs-control-text">End of dialog window.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="channel-list">
+                    <ul class="nav nav-tabs nav-justified" style=" margin-bottom: 15px;">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" data-type="Bangla">Sports</a>
+                        </li>
+
+                    </ul>
+                    <ul id="vidlink" class="thumbnail-slider d-flex flex-wrap">
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/hull1000/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/skyfeed1003/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/hull1001/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/skyfeed1000/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/skyfeed1001/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/skyfeed1002/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/voya1002/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/fcfun1000/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+
+
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/asports/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/starsportsselect1/index.m3u8"><img
+                                    src="img/livetv.png" alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/willow/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/news24/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/starjolsha/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/somoy/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/channel24/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/banglavision/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/boishaki/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/anandatv/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+                        <li class="Bangla " style=""><a id="myLink" title="Click"
+                                href="http://live.hoihulloor.com/live/btvbd/index.m3u8"><img src="img/livetv.png"
+                                    alt=""></a></li>
+
+
+
+
+                        <!--
+<li class="Bangla "><a id="myLink" title="Click" href="http://live.hoihulloor.com/live/voya1003/index.m3u8"><img src="img/livetv.png" alt=""></a></li>
+<li class="Bangla "><a id="myLink" title="Click" href="http://live.hoihulloor.com/live/voya1004/index.m3u8"><img src="img/livetv.png" alt=""></a></li>
+-->
+
+                        <!--<li class="Bangla "><a id="myLink" title="Click" href="http://live.hoihulloor.com:8081/sky/1000/playlist.m3u8"><img src="img/livetv.png" alt=""></a></li>
+<li class="Bangla "><a id="myLink" title="Click" href="http://live.hoihulloor.com:8081/sky/1001/playlist.m3u8"><img src="img/livetv.png" alt=""></a></li>
+<li class="Bangla "><a id="myLink" title="Click" href="http://live.hoihulloor.com:8081/sky/2000/playlist.m3u8"><img src="img/livetv.png" alt=""></a></li>
+<li class="Bangla "><a id="myLink" title="Click" href="http://live.hoihulloor.com:8081/sky/2001/playlist.m3u8"><img src="img/livetv.png" alt=""></a></li>
+<li class="Bangla "><a id="myLink" title="Click" href="http://live.hoihulloor.com:8081/sky/1005/playlist.m3u8"><img src="img/livetv.png" alt=""></a></li>
+<li class="Bangla "><a id="myLink" title="Click" href="http://live.hoihulloor.com:8081/sky/1004/playlist.m3u8"><img src="img/livetv.png" alt=""></a></li>
+<li class="Bangla "><a id="myLink" title="Click" href="http://live.hoihulloor.com:8081/sky/1003/playlist.m3u8"><img src="img/livetv.png" alt=""></a></li>
+<li class="Bangla "><a id="myLink" title="Click" href="http://live.hoihulloor.com:8081/sky/1002/playlist.m3u8"><img src="img/livetv.png" alt=""></a></li>
+<li class="Bangla "><a id="myLink" title="Click" href="http://live.hoihulloor.com/live/sky5000/index.m3u8"><img src="img/livetv.png" alt=""></a></li>                        
+-->
+
+
+
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        var player = videojs("video_1");
+  //player.playlist(myplaylist);
+
+    </script>
+
+    <script>
+        var vgsPlayer, poster;
+        vgsPlayer = videojs('video_1');
+        vgsPlayer.poster('https://img.youtube.com/vi/aqz-KE-bpKQ/maxresdefault.jpg');
+
+        /********* LOAD URL *********/
+        $('#vidlink li a').on('click', function (e) {
+            e.preventDefault();
+            var vidlink = $(this).attr('href');
+            vsgLoadVideo(vidlink);
+            //$('#vsg-vurl').val(vidlink);  
+            //$('input[type=submit]').click();
+        });
+
+        jQuery(function ($) {
+
+
+            $("#vidlink li").css('display', 'none');
+            $("#vidlink .Bangla").css('display', '');
+
+            $(".channel-list .nav-link").click(function () {
+                $(".channel-list .nav-link").removeClass('active');
+
+                $(this).addClass('active');
+
+                var ShowClass = $(this).data('type');
+
+                $("#vidlink li").css('display', 'none');
+                $("#vidlink ." + ShowClass).css('display', '');
+            });
+
+            $("#vsg-loadvideo").submit(function (e) {
+                e.preventDefault();
+
+                var vidURL = $("#vsg-vurl").val();
+
+                vsgLoadVideo(vidURL);
+
+            });
+
+        });
+
+
+        function vsgLoadVideo(vidURL, poster) {
+            var type = getType(vidURL);
+
+            if (getId(vidURL))
+                poster = "http://img.youtube.com/vi/" + getId(vidURL) + "/hqdefault.jpg";
+
+            vgsPlayer.src({
+                "src": vidURL,
+                "type": type
+            });
+            if (poster)
+                vgsPlayer.poster(poster);
+            else
+                vgsPlayer.poster("//i.imgur.com/aE0LoTe.png");
+
+            // play seem to trigger to fast before Youtube is ready
+
+            //vgsPlayer.pause();
+            //	vgsPlayer.load();
+            vgsPlayer.play();
+            /*   setTimeout(function() {
+             vgsPlayer.play();
+             }, 500); */
+
+            return false;
+
+        }
+
+
+        function ytVidId(url) {
+            //var p = /^(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?(?=.*v=((\w|-){11}))(?:\S+)?$/;
+            //var p = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            var p = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+
+            if (url.match(p) || getId(url).length == 11)
+                return false;
+        }
+
+        /**/
+        function getId(url) {
+            //var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+            var match = url.match(regExp);
+
+            if (match && match[2].length == 11) {
+                return match[2];
+            } else {
+                return false;
+            }
+        }
+
+        var rtmp_suffix = /^rtmp:\/\//;
+        var hls_suffix = /\.m3u8/;
+        var mp4_suffix = /\.(mp4|m4p|m4v|mov)/i;
+        var hds_suffix = /\.f4m/;
+        var dash_suffix = /\.mpd/;
+        var flv_suffix = /\.flv/;
+        var webm_suffix = /\.webm/;
+        /* AUDIO */
+        //var mp3_suffix = /\.mp3/;
+        var mpeg_suffix = /\.(mp3|m4a)/i;
+        var ogg_suffix = /\.ogg/;
+
+        //var youtube_suffix = /\.youtube.com/;
+        //var yt_suffix = /^(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?(?=.*v=((\w|-){11}))(?:\S+)?$/;
+        var yt_suffix = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        var dm_suffix = /\.?dailymotion.com/;
+        var vm_suffix = /\.?vimeo.com/;
+        /* ADVANCED REGEX */
+        //      var regVimeo = /^.*(vimeo.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/;
+        //      var regDailymotion = /^.+dailymotion.com\/(video|hub)\/([^_]+)[^#]*(#video=([^_&]+))?/;
+        //      var regMetacafe = /^.*(metacafe.com)(\/watch\/)(d+)(.*)/i;
+        //      var youtube_suffix = /(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+
+        function getType(url) {
+
+            /* AUDIO */
+            if (mpeg_suffix.test(url))
+                return 'audio/mpeg';
+            if (ogg_suffix.test(url))
+                return 'audio/ogg';
+            if (dash_suffix.test(url))
+                return 'application/dash+xml';
+            if (rtmp_suffix.test(url))
+                return 'rtmp/mp4';
+            if (hls_suffix.test(url))
+                return 'application/x-mpegurl';
+            if (mp4_suffix.test(url))
+                return 'video/mp4';
+            if (hds_suffix.test(url))
+                return 'application/adobe-f4m';
+            if (flv_suffix.test(url))
+                return 'video/flv';
+            if (webm_suffix.test(url))
+                return 'video/webm';
+            if (yt_suffix.test(url)) {
+                //alert(url.match(yt_suffix)[2]);
+                //player.poster(ytmaxres(url.match(yt_suffix)[2]));
+                //alert(ytmaxres(url.match(yt_suffix)[2]));
+                return 'video/youtube';
+            }
+            if (dm_suffix.test(url))
+                return 'video/dailymotion';
+            if (vm_suffix.test(url))
+                return 'video/vimeo';
+
+            console.log('could not guess link type: "' + url + '" assuming mp4');
+            return 'video/mp4';
+        }
+        ;
+
+        function getExt(ext) {
+
+            //if (ext == "youtube") ext = "mp4";
+            if (ext == "mp4" || ext == "m4v")
+                ext = "m4v";
+            if (ext == "ogg" || ext == "ogv")
+                ext = "oga";
+            if (ext == "webm")
+                ext = "webmv";
+
+            return ext;
+        }
+
+        var vgsPlayer, poster;
+        vgsPlayer = videojs('video_1');
+        vgsPlayer.poster('https://img.youtube.com/vi/aqz-KE-bpKQ/maxresdefault.jpg');
+
+        /********* LOAD URL *********/
+        $('#vidlink li a').on('click', function (e) {
+            e.preventDefault();
+            var vidlink = $(this).attr('href');
+            vsgLoadVideo(vidlink);
+            //$('#vsg-vurl').val(vidlink);  
+            //$('input[type=submit]').click();
+        });
+
+        jQuery(function ($) {
+
+
+            $("#vidlink li").css('display', 'none');
+            $("#vidlink .Bangla").css('display', '');
+
+            $(".channel-list .nav-link").click(function () {
+                $(".channel-list .nav-link").removeClass('active');
+
+                $(this).addClass('active');
+
+                var ShowClass = $(this).data('type');
+
+                $("#vidlink li").css('display', 'none');
+                $("#vidlink ." + ShowClass).css('display', '');
+            });
+
+            $("#vsg-loadvideo").submit(function (e) {
+                e.preventDefault();
+
+                var vidURL = $("#vsg-vurl").val();
+
+                vsgLoadVideo(vidURL);
+
+            });
+
+        });
+
+
+        function vsgLoadVideo(vidURL, poster) {
+            var type = getType(vidURL);
+
+            if (getId(vidURL))
+                poster = "http://img.youtube.com/vi/" + getId(vidURL) + "/hqdefault.jpg";
+
+            vgsPlayer.src({
+                "src": vidURL,
+                "type": type
+            });
+            if (poster)
+                vgsPlayer.poster(poster);
+            else
+                vgsPlayer.poster("//i.imgur.com/aE0LoTe.png");
+
+            // play seem to trigger to fast before Youtube is ready
+
+            //vgsPlayer.pause();
+            //	vgsPlayer.load();
+            vgsPlayer.play();
+            /*   setTimeout(function() {
+             vgsPlayer.play();
+             }, 500); */
+
+            return false;
+
+        }
+
+
+        function ytVidId(url) {
+            //var p = /^(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?(?=.*v=((\w|-){11}))(?:\S+)?$/;
+            //var p = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            var p = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+
+            if (url.match(p) || getId(url).length == 11)
+                return false;
+        }
+
+        /**/
+        function getId(url) {
+            //var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+            var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
+            var match = url.match(regExp);
+
+            if (match && match[2].length == 11) {
+                return match[2];
+            } else {
+                return false;
+            }
+        }
+
+        var rtmp_suffix = /^rtmp:\/\//;
+        var hls_suffix = /\.m3u8/;
+        var mp4_suffix = /\.(mp4|m4p|m4v|mov)/i;
+        var hds_suffix = /\.f4m/;
+        var dash_suffix = /\.mpd/;
+        var flv_suffix = /\.flv/;
+        var webm_suffix = /\.webm/;
+        /* AUDIO */
+        //var mp3_suffix = /\.mp3/;
+        var mpeg_suffix = /\.(mp3|m4a)/i;
+        var ogg_suffix = /\.ogg/;
+
+        //var youtube_suffix = /\.youtube.com/;
+        //var yt_suffix = /^(?:https?:\/\/)?(?:www\.)?youtube\.com\/watch\?(?=.*v=((\w|-){11}))(?:\S+)?$/;
+        var yt_suffix = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+        var dm_suffix = /\.?dailymotion.com/;
+        var vm_suffix = /\.?vimeo.com/;
+        /* ADVANCED REGEX */
+        //      var regVimeo = /^.*(vimeo.com\/)((channels\/[A-z]+\/)|(groups\/[A-z]+\/videos\/))?([0-9]+)/;
+        //      var regDailymotion = /^.+dailymotion.com\/(video|hub)\/([^_]+)[^#]*(#video=([^_&]+))?/;
+        //      var regMetacafe = /^.*(metacafe.com)(\/watch\/)(d+)(.*)/i;
+        //      var youtube_suffix = /(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+
+        function getType(url) {
+
+            /* AUDIO */
+            if (mpeg_suffix.test(url))
+                return 'audio/mpeg';
+            if (ogg_suffix.test(url))
+                return 'audio/ogg';
+            if (dash_suffix.test(url))
+                return 'application/dash+xml';
+            if (rtmp_suffix.test(url))
+                return 'rtmp/mp4';
+            if (hls_suffix.test(url))
+                return 'application/x-mpegurl';
+            if (mp4_suffix.test(url))
+                return 'video/mp4';
+            if (hds_suffix.test(url))
+                return 'application/adobe-f4m';
+            if (flv_suffix.test(url))
+                return 'video/flv';
+            if (webm_suffix.test(url))
+                return 'video/webm';
+            if (yt_suffix.test(url)) {
+                //alert(url.match(yt_suffix)[2]);
+                //player.poster(ytmaxres(url.match(yt_suffix)[2]));
+                //alert(ytmaxres(url.match(yt_suffix)[2]));
+                return 'video/youtube';
+            }
+            if (dm_suffix.test(url))
+                return 'video/dailymotion';
+            if (vm_suffix.test(url))
+                return 'video/vimeo';
+
+            console.log('could not guess link type: "' + url + '" assuming mp4');
+            return 'video/mp4';
+        }
+        ;
+
+        function getExt(ext) {
+
+            //if (ext == "youtube") ext = "mp4";
+            if (ext == "mp4" || ext == "m4v")
+                ext = "m4v";
+            if (ext == "ogg" || ext == "ogv")
+                ext = "oga";
+            if (ext == "webm")
+                ext = "webmv";
+
+            return ext;
+        }
+    </script>
+
+
+</body>
+
+</html>
